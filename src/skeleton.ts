@@ -1,11 +1,26 @@
-/**
- * Adds together two numbers
- * @param a - the first number to add
- * @param b - the second number to add
- * @returns the total
- */
-function sum(a: number, b: number): number {
-  return a + b;
+// function isNestedCorrectly(nestedBrackets: string): boolean {
+//   const workStack: string[] = [];
+//   let matchingIndex: number
+
+//   if (nestedBrackets.slice(0,1)) {
+//     matchingIndex = findMatchingBracket(nestedBrackets)
+
+//     // if nestedBrackets
+//   }
+// }
+
+function findMatchingBracket (nest: string): number {
+  const nestArray = nest.split("");
+  if (nestArray[0] === "{") {
+    return nestArray.findIndex((bracket) => bracket === "}")
+  } else if (nestArray[0] === "[") {
+    return nestArray.findIndex((bracket) => bracket === "]")
+  } else {
+    return nestArray.findIndex((bracket) => bracket === ")")
+  }
+
 }
 
-export default sum;
+console.log(findMatchingBracket('({{{'))
+
+// export default isNestedCorrectly;
